@@ -1,25 +1,25 @@
 # sass_transpiler: 'dartsass' # Uncomment to use Dart Sass, you need to install Dart Sass first.
 
 mainSections:
-  - blog
+  - padesatka
   - posts
   - news
 
 # titleSeparator: '|' # Title separator. Default to -.
 
-description: An extreme fast, responsive and feature-rich blog theme for Hugo
-keywords: Hugo, Bootstrap, Blog Theme
+# description: An extreme fast, responsive and feature-rich blog theme for Hugo
+keywords: KČT, Tišnov, turistika, Tišnovská padesátka
 # images:
 #   - site-feature-image.jpg
 
 # metaRobots: noindex, nofollow # Default value for Meta Tag robots
 # metaRobots:  # disable Meta Tag robots
 
-# logo: images/logo.png # Logo image. Default to images/logo.webp.
+logo: images/logo.png # Logo image. Default to images/logo.webp.
 # logo: false # Disable Logo
-brand: HBS
+brand: KČT Tišnov
 
-palette: purple # Default palette. Optional. You'll need to clear the browser cache after modifying this.
+palette: blue # Default palette. Optional. You'll need to clear the browser cache after modifying this.
 # Available palettes. Default to ALL. Empty array means disable.
 # palettes:
 #  - blue
@@ -43,7 +43,7 @@ palette: purple # Default palette. Optional. You'll need to clear the browser ca
 dateFormat: ":date_long"
 
 # Google Adsense
-googleAdsense: 
+# googleAdsense:
 
 # math: true # Enable math globally.
 # toc: false # Disable TOC globally.
@@ -51,13 +51,13 @@ googleAdsense:
 # breadcrumb: false # Disable breadcrumb
 # breadcrumbDivider: > # Breadcrumb divider
 # diagram: true
-# socialShare: false # disable social network sharing
-# searchBar: false # disable search-bar
+socialShare: false # disable social network sharing
+searchBar: false # disable search-bar
 
 # poweredBy: false # Whether to show powered by.
 
 # readingTime: false # Whether to display the reading time.
-# postDate: false # Whether to display the post date in the post meta section.
+postDate: true # Whether to display the post date in the post meta section.
 
 # featuredPostCount: 10 # The number of featured posts shown in sidebar. Turn off by setting it to false.
 # recentPostCount: 10 # The number of recent posts shown in sidebar. Turn off by setting it to false.
@@ -92,13 +92,13 @@ sidebar:
   # archives: true # Enable archives widget
   # taxonomiesToggle: false # Disable taxonomy toggle
   # categories: true # Enable categories widget
-  # tags: true # Enable tags widget
+  tags: true # Enable tags widget
   # series: true # Enable series widget
   # authors: true # Enable authors widget
   # postsToggle: false # Disable posts toggle
   # featuredPosts: true # Enable featured posts widget
-  # recentPosts: true # Enable featured posts widget
-  # collapsed: true # Collapse sidebar widgets by default on small screens.
+  recentPosts: false # Enable featured posts widget
+  collapsed: false # Collapse sidebar widgets by default on small screens.
 
 codeBlock:
   # maxLines: 8
@@ -107,8 +107,9 @@ codeBlock:
 post:
   # excerpt: description
   # excerptMaxLength: 120
-  # copyright: false # Whether to display copyright section on each post.
-  # plainifyExcerpt: false # Format excerpt in HTML if false.
+  comments: false
+  copyright: false # Whether to display copyright section on each post.
+  plainifyExcerpt: false # Format excerpt in HTML if false.
   featuredImage: true # Show the featured image above the content.
   numberifyHeadings: true # Count headings automatically.
   # numberifyHeadingsEndLevel: 4 # The depth of headings to count. Default to 6.
@@ -126,9 +127,6 @@ archive:
   # basePath = "/archiv" # The base path of archive pages.
   # dateFormat: 01-02 # Archive date format. Default to Jan 2.
 
-analytics:
-  # baidu:  # Baidu Analytics
-
 # Site verification
 siteVerification:
   google: 
@@ -139,7 +137,7 @@ siteVerification:
   sogou: 
   shenma: 
 
-creativeCommons:
+# creativeCommons:
   # by: true # Credit must be given to you, the creator.
   # nc: true # Only noncommercial use of your work is permitted.
   # nd: true # No derivatives or adaptations of your work are permitted.
@@ -171,11 +169,11 @@ creativeCommons:
   #moderation: false # Same as Staticman's moderation.
 
 # See https://giscus.app
-giscus:
-  repo: "razonyang/hugo-theme-bootstrap-skeleton" # required.
-  repoId: "R_kgDOHJi95g" # required.
-  category: "General" # required.
-  categoryId: "DIC_kwDOHJi95s4CTy6q" # required.
+# giscus:
+#   repo: "razonyang/hugo-theme-bootstrap-skeleton" # required.
+#   repoId: "R_kgDOHJi95g" # required.
+#   category: "General" # required.
+#   categoryId: "DIC_kwDOHJi95s4CTy6q" # required.
   # theme: "dark" # Default to auto.
   # mapping: "title" # Default to pathname.
   # inputPosition: "bottom" # Default to top.
@@ -205,9 +203,9 @@ search:
   # indexName: ""
   # debug: true
 
-reward:
-  alipay: images/reward/alipay.png
-  wechat: images/reward/wechat.png
+#reward:
+#  alipay: images/reward/alipay.png
+#  wechat: images/reward/wechat.png
   #paypal: images/reward/paypal.png
   #patreon: images/reward/patreon.png
   #liberapay: images/reward/liberapay.png
@@ -215,11 +213,11 @@ reward:
 #share:
   #addThis:  # AddThis pubid.
 
-#actionsPanel:
-  # disabled: true
+actionsPanel:
+  disabled: true
 
 # Comment or remove this settings to disable font size switcher.
-fontSize:
+# fontSize:
   # extraSmall: .8rem
   # small: .9rem
   # large: 1.1rem
@@ -228,7 +226,7 @@ fontSize:
 pwa:
   manifest:
     # name:  # Default to site title.
-    short_name: HBS
+    short_name: KČT Tišnov
     # display: fullscreen # Default to standalone.
     # description:  # Default to site description.
     # theme_color: 
@@ -242,85 +240,87 @@ pwa:
     #   sizes: 144x144
     #   src: /images/icons/icon-144x144.png
 
-contact:
-  endpoint: https://getform.io/f/56041c81-9e03-4c24-b9c5-61238854d4cd # Backend endpoint, remove this line if you're using Netlify.
+# contact:
+  # endpoint: https://getform.io/f/56041c81-9e03-4c24-b9c5-61238854d4cd # Backend endpoint, remove this line if you're using Netlify.
   # file: true # Enable file upload
   # fileField: image # The name of file field.
   # reCaptcha:
     # siteKey: ""
 
-repo:
-  url: https://github.com/razonyang/hugo-theme-bootstrap-skeleton
-  branch: main
+# repo:
+  # url: https://github.com/haberturdeur/kct-tisnov.cz
+  # branch: main
   # subPath: exampleSite
   # dateFormat: 02/01/2006, 15:04:05 PM
 
 topAppBar:
   # See https://hbs.razonyang.com/v1/en/docs/widgets/social-links/.
-  social:
-    github: razonyang/hugo-theme-bootstrap
-    patreon: razonyang
-    paypal: razonyang
+  # social:
+    # github: razonyang/hugo-theme-bootstrap
+    # patreon: razonyang
+    # paypal: razonyang
 
-docs:
-  nav:
-    expand: false # Expand docs navigation.
-    reduceFontSize: true # Reduce font size of children navigation.
+# docs:
+#   nav:
+#     expand: false # Expand docs navigation.
+#     reduceFontSize: true # Reduce font size of children navigation.
 
 #feeds:
   # content: true
 
 social:
   # See https://hbs.razonyang.com/v1/en/docs/widgets/social-links/.
-  email: user@domain.tld
-  facebook: yourfacebookusername
-  github: razonyang/hugo-theme-bootstrap
-  gitlab: yourgitlabusername
-  linkedin: yourlinkedinusername
-  xing: yourxingusername
-  stackoverflow: yourstackoverflowuserid
-  twitter: yourtwitterusername
-  weibo: yourweibousername
-  zhihu: yourzhihuusername
-  instagram: yourinstagramusername
-  quora: yourquorausername
-  tumblr: yourtumblrusername
-  reddit: yourredditusername
-  telegram: yourtelegramusername
-  qq: yourqqnumber
-  dockerhub: yourdockerhubusername
-  bitbucket: yourbitbucketworkspaceid
-  kaggle: yourkaggleusername
-  medium: yourmediumusername # Medium username or custom domain(e.g. https://custom.domain.tld).
-  lastfm: yourlastfmusername
-  bilibili: yourbilibiliuserid
-  youtube: youryoutubechannelid
-  discord: yourdiscordinvitecode
-  discourse: https://yourforum.tld
-  facebookgroup: yourfacebookgroupname
-  tiktok: yourtiktokusername
-  pinterest: yourpinterestusername
-  mastodon: yourmastodonusername
-  liberapay: yourliberapayaccount
-  paypal: razonyang
-  patreon: razonyang
-  tipeee: yourtipeeeaccount-fr
+  email: info@kct-tisnov.cz
+  facebook: https://www.facebook.com/kct.tisnov
+  # github: razonyang/hugo-theme-bootstrap
+  # gitlab: yourgitlabusername
+  # linkedin: yourlinkedinusername
+  # xing: yourxingusername
+  # stackoverflow: yourstackoverflowuserid
+  # twitter: yourtwitterusername
+  # weibo: yourweibousername
+  # zhihu: yourzhihuusername
+  # instagram: yourinstagramusername
+  # quora: yourquorausername
+  # tumblr: yourtumblrusername
+  # reddit: yourredditusername
+  # telegram: yourtelegramusername
+  # qq: yourqqnumber
+  # dockerhub: yourdockerhubusername
+  # bitbucket: yourbitbucketworkspaceid
+  # kaggle: yourkaggleusername
+  # medium: yourmediumusername # Medium username or custom domain(e.g. https://custom.domain.tld).
+  # lastfm: yourlastfmusername
+  # bilibili: yourbilibiliuserid
+  # youtube: youryoutubechannelid
+  # discord: yourdiscordinvitecode
+  # discourse: https://yourforum.tld
+  # facebookgroup: yourfacebookgroupname
+  # tiktok: yourtiktokusername
+  # pinterest: yourpinterestusername
+  # mastodon: yourmastodonusername
+  # liberapay: yourliberapayaccount
+  # paypal: razonyang
+  # patreon: razonyang
+  # tipeee: yourtipeeeaccount-fr
 
 author:
-  name: Razon Yang
-  # avatar: images/profile.png # Avatar image. Default to "images/profile.webp".
-  bio: 'Gopher, PHPer, Full Stack Engineer.'
-  company: Company # HTML markup are supported, such as: <a href="https://example.com" target="_blank" rel="noopener noreferrer">Company</a>.
-  location: Earth # HTML markup are supported, such as: <a href='https://www.openstreetmap.org/search?query=Earth'>Earth</a>.
+  name: KČT Tišnov
+  avatar: images/logo1.png # Avatar image. Default to "images/profile.webp".
+  # bio: "test"
+  # company: Company # HTML markup are supported, such as: <a href="https://example.com" target="_blank" rel="noopener noreferrer">Company</a>.
+  # location: Earth # HTML markup are supported, such as: <a href='https://www.openstreetmap.org/search?query=Earth'>Earth</a>.
   # about: https://razonyang.com # The external about page. The internal about page will be used if not set.
-  params: {
-    # layout: compact
-  }
+  # params: {
+  #   # layout: compact
+  # }
   # See https://hbs.razonyang.com/v1/en/docs/widgets/social-links/.
   social:
-    email: razonyang@gmail.com
-    github: razonyang/hugo-theme-bootstrap
-    twitter: razonyang
-    patreon: razonyang
-    paypal: razonyang
+    email: info@kct-tisnov.cz
+    # github: razonyang/hugo-theme-bootstrap
+    # twitter: razonyang
+    # patreon: razonyang
+    # paypal: razonyang
+    address: test
     rss: "" # Remove RSS
+    facebook: https://www.facebook.com/kct.tisnov

@@ -2,17 +2,18 @@
 # type: docs 
 title: {{ replace .Name "-" " " | title }}
 date: {{ .Date }}
-featured: false
+featured: true
 draft: true
-comment: true
-toc: true
-reward: true
+comment: false
+toc: false
+reward: false
 pinned: false
 carousel: false
 series:
 categories: []
 tags: []
 images: []
+comments: false
 ---
 
 Summary.
