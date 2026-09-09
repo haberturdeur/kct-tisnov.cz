@@ -106,7 +106,7 @@ codeBlock:
 
 post:
   # excerpt: description
-  # excerptMaxLength: 120
+  excerptMaxLength: 3000
   comments: false
   copyright: false # Whether to display copyright section on each post.
   plainifyExcerpt: false # Format excerpt in HTML if false.

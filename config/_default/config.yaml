@@ -40,6 +40,10 @@ module:
 #     shortname: your-disqus-shortname
 
 markup:
+  goldmark:
+    parser:
+      attribute:
+        block: true
   highlight:
     guessSyntax: true
     lineNos: true

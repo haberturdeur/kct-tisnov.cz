@@ -1,0 +1,24 @@
+{{- $paginator := .Paginator -}}
+{{- if gt $paginator.TotalPages 1 -}}
+<div class="row table-responsive mb-3">
+  <ul class="pagination">
+    <li class="page-item{{ if not $paginator.HasPrev }} disabled{{ end }}">
+      <a class="page-link" {{ if $paginator.HasPrev }}href="{{ $paginator.First.URL }}"{{ else }}aria-disabled="true" tabindex="-1"{{ end }} aria-label="First page">&laquo;&laquo;</a>
+    </li>
+    <li class="page-item{{ if not $paginator.HasPrev }} disabled{{ end }}">
+      <a class="page-link" {{ if $paginator.HasPrev }}href="{{ $paginator.Prev.URL }}"{{ else }}aria-disabled="true" tabindex="-1"{{ end }} aria-label="Previous page">&laquo;</a>
+    </li>
+    {{- range $paginator.Pagers }}
+    <li class="page-item{{ if eq .PageNumber $paginator.PageNumber }} active{{ end }}">
+      <a class="page-link" href="{{ .URL }}" aria-label="Page {{ .PageNumber }}"{{ if eq .PageNumber $paginator.PageNumber }} aria-current="page"{{ end }}>{{ .PageNumber }}</a>
+    </li>
+    {{- end }}
+    <li class="page-item{{ if not $paginator.HasNext }} disabled{{ end }}">
+      <a class="page-link" {{ if $paginator.HasNext }}href="{{ $paginator.Next.URL }}"{{ else }}aria-disabled="true" tabindex="-1"{{ end }} aria-label="Next page">&raquo;</a>
+    </li>
+    <li class="page-item{{ if not $paginator.HasNext }} disabled{{ end }}">
+      <a class="page-link" {{ if $paginator.HasNext }}href="{{ $paginator.Last.URL }}"{{ else }}aria-disabled="true" tabindex="-1"{{ end }} aria-label="Last page">&raquo;&raquo;</a>
+    </li>
+  </ul>
+</div>
+{{- end -}}

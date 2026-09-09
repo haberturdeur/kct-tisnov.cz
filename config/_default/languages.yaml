@@ -1,6 +1,6 @@
 cs:
-    languageName: Czechi
-    languageCode: cs
+    label: Czechi
+    locale: cs
     weight: 1
     menus:
         main:
