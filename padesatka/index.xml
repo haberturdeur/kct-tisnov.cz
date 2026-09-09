@@ -1,25 +1,65 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Tišnovská padesátka on KČT Tišnov</title><link>https://kct-tisnov.cz/padesatka/</link><description>Recent content in Tišnovská padesátka on KČT Tišnov</description><generator>Hugo</generator><language>cs</language><copyright>Copyright © 2024-2024 KČT Tišnov. All Rights Reserved.</copyright><atom:link href="https://kct-tisnov.cz/padesatka/index.xml" rel="self" type="application/rss+xml"/><item><title>Ročník 54 (2024)</title><link>https://kct-tisnov.cz/padesatka/2024/</link><pubDate>Thu, 10 Oct 2024 00:00:00 +0000</pubDate><guid>https://kct-tisnov.cz/padesatka/2024/</guid><description><![CDATA[<h4 id="účast" data-numberify>Účast<a class="anchor ms-1" href="#účast"></a></h4>
-<p>T8: 83</p>
-<p>T10: 258</p>
-<p>T14: 310</p>
-<p>T19: 273</p>
-<p>T27: 91</p>
-<p>T35: 94</p>
-<p>T50: 120</p>
-<p>CT41: 18</p>
-<p>CT50: 78</p>
-<p>Celkem: 1325</p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Tišnovská padesátka on KČT Tišnov</title><link>https://kct-tisnov.cz/padesatka/</link><description>Recent content in Tišnovská padesátka on KČT Tišnov</description><generator>Hugo</generator><language>cs</language><copyright>Copyright © 2024-2026 KČT Tišnov. All Rights Reserved.</copyright><atom:link href="https://kct-tisnov.cz/padesatka/index.xml" rel="self" type="application/rss+xml"/><item><title>Ročník 56 (2026)</title><link>https://kct-tisnov.cz/padesatka/2026/</link><pubDate>Wed, 09 Sep 2026 00:00:00 +0000</pubDate><guid>https://kct-tisnov.cz/padesatka/2026/</guid><description><![CDATA[<h4 id="trasy" data-numberify>Trasy<a class="anchor ms-1" href="#trasy"></a></h4>
+<p><strong>T7 a kočárek:</strong> <a href="">Mapy.cz</a>, <a href="/padesatka/2026/T7.pdf">PDF</a></p>
+<details class="route-places">
+  <summary><span class="route-places-text">Tišnov → Besének, rozc. → Předklášteří → Vokounova vyhl. / Vokounova ul. → Za Mlýnem → Tišnov</span></summary>
+</details>
+
+<p><strong>T10:</strong> <a href="">Mapy.cz</a>, <a href="/padesatka/2026/T10.pdf">PDF</a></p>
+<details class="route-places">
+  <summary><span class="route-places-text">Tišnov → Besének, rozc. → Předklášteří → Nad Nelepčí → Prosba lesa → Za Mlýnem → Tišnov</span></summary>
+</details>
+
+<p><strong>T17:</strong> <a href="">Mapy.cz</a>, <a href="/padesatka/2026/T17.pdf">PDF</a></p>
+<details class="route-places">
+  <summary><span class="route-places-text">Tišnov → Předklášteří → Nad Nelepčí → Nelepeč → Čížky → Pejškov → Vohančice → Pod Výrovkou → Za Mlýnem → Tišnov</span></summary>
+</details>
+
+<p><strong>T24:</strong> <a href="">Mapy.cz</a>, <a href="/padesatka/2026/T24.pdf">PDF</a></p>
+<details class="route-places">
+  <summary><span class="route-places-text">Tišnov → Besének, rozc. → Dolní Loučky → Mírová, rozc. → Chytálky, rozc. → Úsuší → Čížky → U křížku → Pejškov → Vohančice → Pod Výrovkou → Za Mlýnem → Tišnov</span></summary>
+</details>
+
+<p><strong>T29:</strong> <a href="">Mapy.cz</a>, <a href="/padesatka/2026/T29.pdf">PDF</a></p>]]></description></item><item><title>Ročník 54 (2024)</title><link>https://kct-tisnov.cz/padesatka/2024/</link><pubDate>Thu, 10 Oct 2024 00:00:00 +0000</pubDate><guid>https://kct-tisnov.cz/padesatka/2024/</guid><description><![CDATA[<h4 id="účast" data-numberify>Účast<a class="anchor ms-1" href="#účast"></a></h4>
+<table class="attendance-table">
+	<thead>
+			<tr>
+					<th style="text-align: center">T8</th>
+					<th style="text-align: center">T10</th>
+					<th style="text-align: center">T14</th>
+					<th style="text-align: center">T19</th>
+					<th style="text-align: center">T27</th>
+					<th style="text-align: center">T35</th>
+					<th style="text-align: center">T50</th>
+					<th style="text-align: center">CT41</th>
+					<th style="text-align: center">CT50</th>
+					<th style="text-align: center">Celkem</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: center">83</td>
+					<td style="text-align: center">258</td>
+					<td style="text-align: center">310</td>
+					<td style="text-align: center">273</td>
+					<td style="text-align: center">91</td>
+					<td style="text-align: center">94</td>
+					<td style="text-align: center">120</td>
+					<td style="text-align: center">18</td>
+					<td style="text-align: center">78</td>
+					<td style="text-align: center"><strong>1 325</strong></td>
+			</tr>
+	</tbody>
+</table>
 
 <h4 id="trasy" data-numberify>Trasy<a class="anchor ms-1" href="#trasy"></a></h4>
-<p>T8: <a href="https://mapy.cz/s/fodubeloha" target="_blank" rel="noopener noreferrer">Mapy.cz<i class="fas fa-external-link-square-alt ms-1"></i></a>, <a href="/padesatka/2024/T8.pdf">PDF</a></p>
-<p>T10: <a href="https://mapy.cz/s/pulolaseke" target="_blank" rel="noopener noreferrer">Mapy.cz<i class="fas fa-external-link-square-alt ms-1"></i></a>, <a href="/padesatka/2024/T10.pdf">PDF</a></p>
-<p>T14: <a href="https://mapy.cz/s/nasetogudu" target="_blank" rel="noopener noreferrer">Mapy.cz<i class="fas fa-external-link-square-alt ms-1"></i></a>, <a href="/padesatka/2024/T14.pdf">PDF</a></p>
-<p>T19: <a href="https://mapy.cz/s/nujatakeja" target="_blank" rel="noopener noreferrer">Mapy.cz<i class="fas fa-external-link-square-alt ms-1"></i></a>, <a href="/padesatka/2024/T19.pdf">PDF</a></p>
-<p>T27: <a href="https://mapy.cz/s/benedarado" target="_blank" rel="noopener noreferrer">Mapy.cz<i class="fas fa-external-link-square-alt ms-1"></i></a>, <a href="/padesatka/2024/T27.pdf">PDF</a></p>
-<p>T35: <a href="https://mapy.cz/s/demagukubo" target="_blank" rel="noopener noreferrer">Mapy.cz<i class="fas fa-external-link-square-alt ms-1"></i></a>, <a href="/padesatka/2024/T35.pdf">PDF</a></p>
-<p>T50: <a href="https://mapy.cz/s/feragesugu" target="_blank" rel="noopener noreferrer">Mapy.cz<i class="fas fa-external-link-square-alt ms-1"></i></a>, <a href="/padesatka/2024/T50.pdf">PDF</a></p>
-<p>CT41: <a href="https://mapy.cz/s/donuvevopu" target="_blank" rel="noopener noreferrer">Mapy.cz<i class="fas fa-external-link-square-alt ms-1"></i></a>, <a href="/padesatka/2024/CT41.pdf">PDF</a></p>
-<p>CT50: <a href="https://mapy.cz/s/nahudadejo" target="_blank" rel="noopener noreferrer">Mapy.cz<i class="fas fa-external-link-square-alt ms-1"></i></a>, <a href="/padesatka/2024/CT50.pdf">PDF</a></p>]]></description></item><item><title>Trasy 2023</title><link>https://kct-tisnov.cz/padesatka/2023/</link><pubDate>Sun, 10 Sep 2023 00:00:00 +0000</pubDate><guid>https://kct-tisnov.cz/padesatka/2023/</guid><description><![CDATA[<p>Vážení turisté,</p>
-<p>pokud si chcete stáhnout propozice s trasami pochodu Tišnovská 50, který se koná 14.10.2023, tak je najdete právě tady.</p>
-<p>Trasy na Mapách CZ najdete také na <a href="https://www.facebook.com/kct.tisnov" target="_blank" rel="noopener noreferrer">našem Facebooku<i class="fas fa-external-link-square-alt ms-1"></i></a>.</p>
-<p>Více <a href="https://kcttisnov.webnode.cz/news/propozice-a-trasy-tisnovska-50/" target="_blank" rel="noopener noreferrer">zde<i class="fas fa-external-link-square-alt ms-1"></i></a>.</p>]]></description></item></channel></rss>
+<p><strong>T8:</strong> <a href="https://mapy.cz/s/fodubeloha" target="_blank" rel="noopener noreferrer">Mapy.cz<i class="fas fa-external-link-square-alt ms-1"></i></a>, <a href="/padesatka/2024/T8.pdf">PDF</a></p>
+<p><strong>T10:</strong> <a href="https://mapy.cz/s/pulolaseke" target="_blank" rel="noopener noreferrer">Mapy.cz<i class="fas fa-external-link-square-alt ms-1"></i></a>, <a href="/padesatka/2024/T10.pdf">PDF</a></p>
+<p><strong>T14:</strong> <a href="https://mapy.cz/s/nasetogudu" target="_blank" rel="noopener noreferrer">Mapy.cz<i class="fas fa-external-link-square-alt ms-1"></i></a>, <a href="/padesatka/2024/T14.pdf">PDF</a></p>
+<p><strong>T19:</strong> <a href="https://mapy.cz/s/nujatakeja" target="_blank" rel="noopener noreferrer">Mapy.cz<i class="fas fa-external-link-square-alt ms-1"></i></a>, <a href="/padesatka/2024/T19.pdf">PDF</a></p>
+<p><strong>T27:</strong> <a href="https://mapy.cz/s/benedarado" target="_blank" rel="noopener noreferrer">Mapy.cz<i class="fas fa-external-link-square-alt ms-1"></i></a>, <a href="/padesatka/2024/T27.pdf">PDF</a></p>
+<p><strong>T35:</strong> <a href="https://mapy.cz/s/demagukubo" target="_blank" rel="noopener noreferrer">Mapy.cz<i class="fas fa-external-link-square-alt ms-1"></i></a>, <a href="/padesatka/2024/T35.pdf">PDF</a></p>
+<p><strong>T50:</strong> <a href="https://mapy.cz/s/feragesugu" target="_blank" rel="noopener noreferrer">Mapy.cz<i class="fas fa-external-link-square-alt ms-1"></i></a>, <a href="/padesatka/2024/T50.pdf">PDF</a></p>
+<p><strong>CT41:</strong> <a href="https://mapy.cz/s/donuvevopu" target="_blank" rel="noopener noreferrer">Mapy.cz<i class="fas fa-external-link-square-alt ms-1"></i></a>, <a href="/padesatka/2024/CT41.pdf">PDF</a></p>
+<p><strong>CT50:</strong> <a href="https://mapy.cz/s/nahudadejo" target="_blank" rel="noopener noreferrer">Mapy.cz<i class="fas fa-external-link-square-alt ms-1"></i></a>, <a href="/padesatka/2024/CT50.pdf">PDF</a></p>]]></description></item><item><title>Trasy 2023</title><link>https://kct-tisnov.cz/padesatka/2023/</link><pubDate>Sun, 10 Sep 2023 00:00:00 +0000</pubDate><guid>https://kct-tisnov.cz/padesatka/2023/</guid><description><![CDATA[<h4 id="trasy" data-numberify>Trasy<a class="anchor ms-1" href="#trasy"></a></h4>
+<p>Propozice a trasy Tišnovské padesátky, která se konala 14. října 2023, najdete na <a href="https://kcttisnov.webnode.cz/news/propozice-a-trasy-tisnovska-50/" target="_blank" rel="noopener noreferrer">původním webu<i class="fas fa-external-link-square-alt ms-1"></i></a>.</p>
+<p>Odkazy na trasy v Mapy.cz jsou také na <a href="https://www.facebook.com/kct.tisnov" target="_blank" rel="noopener noreferrer">našem Facebooku<i class="fas fa-external-link-square-alt ms-1"></i></a>.</p>]]></description></item></channel></rss>
