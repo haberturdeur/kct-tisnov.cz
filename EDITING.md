@@ -5,13 +5,14 @@ Nadpisy, odkazy, seznamy, obrázky a tabulky upravujte přímo v editoru.
 
 ## Styly
 
-Klikněte do odstavce nebo tabulky a vyberte styl v nabídce **Style** nad editorem:
+Označte text v odstavci nebo tabulce. V nabídce **Text / Heading** na plovoucím
+panelu vyberte styl v sekci **Custom styles**:
 
 - **Místa na trase**: na webu rozbalovací seznam míst se zachováním dosavadního
   vzhledu. V editoru je text vždy rozbalený a lze jej běžně upravovat.
 - **Tabulka účasti**: kompaktní tabulka s vodorovným posouváním a zvýrazněným
   posledním sloupcem. Výběr uvnitř buňky použije styl na celou tabulku.
-- **Default**: odstraní styl a zachová obsah.
+- **Remove custom style**: odstraní styl a zachová obsah.
 
 Není potřeba psát shortcody ani HTML. Přepínač Source zůstává dostupný pro
 pokročilé úpravy. Uložení do větve `main` spustí zveřejnění webu.
