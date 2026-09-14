@@ -1,0 +1,29 @@
+{{- $dest := .Destination -}}
+{{- if hasPrefix $dest "#" -}}
+  {{- $dest = printf "%s%s" .Page.RelPermalink $dest -}}
+{{- end -}}
+{{- $url := urls.Parse .Destination -}}
+{{- $external := and (ne $url.Host "") (ne $url.Host (urls.Parse .Page.Site.BaseURL).Host) -}}
+{{- $routeLink := "" -}}
+{{- if eq .Page.Section "padesatka" -}}
+  {{- if in (slice "mapy.com" "www.mapy.com" "mapy.cz" "www.mapy.cz") (lower $url.Host) -}}
+    {{- $routeLink = "map" -}}
+  {{- else if strings.HasSuffix (lower $url.Path) ".pdf" -}}
+    {{- $routeLink = "pdf" -}}
+  {{- end -}}
+{{- end -}}
+<a href="{{ $dest | safeURL }}"{{ with .Title }} title="{{ . }}"{{ end }}{{ if $routeLink }} class="route-link"{{ end }}{{ if $external }} target="_blank" rel="noopener noreferrer"{{ end }}>
+  {{- with $routeLink -}}
+    <svg class="route-link-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+      {{- if eq . "map" -}}
+        <path d="m9 3 6 3 6-3v15l-6 3-6-3-6 3V6l6-3Z"/><path d="M9 3v15M15 6v15"/>
+      {{- else -}}
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6Z"/><path d="M14 2v6h6M8 13h8M8 17h6"/>
+      {{- end -}}
+    </svg>
+  {{- end -}}
+  {{- .Text | safeHTML -}}
+  {{- if and (not $routeLink) $external (default true site.Params.externalLinkIcon) -}}
+    <i class="fas fa-external-link-square-alt ms-1"></i>
+  {{- end -}}
+</a>
