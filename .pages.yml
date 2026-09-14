@@ -147,3 +147,6 @@ content:
     path: content/about/_index.md
     format: toml-frontmatter
     fields: *section_fields
+
+settings:
+  preview: true
