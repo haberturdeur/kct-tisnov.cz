@@ -1,0 +1,10 @@
+{{- $name := .Get 0 -}}
+{{- if not (findRE `^[a-z][a-z0-9-]*$` $name) -}}
+  {{- errorf "Invalid CMS style %q in %s" $name .Position -}}
+{{- end -}}
+{{- $partial := printf "cms-styles/%s.html" $name -}}
+{{- if templates.Exists (printf "partials/%s" $partial) -}}
+  {{- partial $partial (dict "Page" .Page "Inner" .Inner) -}}
+{{- else -}}
+  <div class="{{ $name }}">{{ .Page.RenderString (dict "display" "block") .Inner }}</div>
+{{- end -}}

@@ -1,0 +1,6 @@
+{{- $text := .Page.RenderString (dict "display" "block") .Inner | strings.TrimSpace -}}
+{{- $text = replaceRE `</p>\s*<p>` "<br>" $text -}}
+{{- $text = replaceRE `^<p>|</p>$` "" $text -}}
+<details class="route-places">
+  <summary><span class="route-places-text">{{ $text | safeHTML }}</span></summary>
+</details>

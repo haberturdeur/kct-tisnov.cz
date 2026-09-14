@@ -6,6 +6,12 @@
   border-collapse: collapse;
   font-size: 0.875em;
 
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 0;
+  }
+
   th,
   td {
     padding: 0.4rem 0.75rem;

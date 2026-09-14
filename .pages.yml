@@ -46,12 +46,26 @@ content:
         type: boolean
         default: false
 
-      - &markdown_body
+      - &visual_body
         name: body
-        label: Obsah (Markdown)
-        type: code
+        label: Obsah
+        type: rich-text
         options:
           format: markdown
+          media: images
+          switcher: true
+          styles:
+            - name: route-places
+              label: Místa na trase
+              preview:
+                color: "#6c757d"
+                font-size: "0.85em"
+                line-height: "1.5"
+            - name: attendance-table
+              label: Tabulka účasti
+              preview:
+                font-size: "0.875em"
+                text-align: center
 
   - name: posts
     label: Články
@@ -84,7 +98,7 @@ content:
         type: boolean
         default: false
 
-      - *markdown_body
+      - *visual_body
 
   - name: about
     label: O nás a kontakty
@@ -106,7 +120,7 @@ content:
         label: Zvýrazněná stránka
         type: boolean
 
-      - *markdown_body
+      - *visual_body
 
   - name: padesatka_index
     label: Úvod — Tišnovská padesátka
@@ -118,7 +132,7 @@ content:
         label: Název
         type: string
         required: true
-      - *markdown_body
+      - *visual_body
 
   - name: posts_index
     label: Úvod — Články
