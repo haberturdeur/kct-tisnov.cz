@@ -1,0 +1,12 @@
+{{- /* Resolve page-backed menu entries through Hugo's permalink so a preview
+     baseURL subdirectory is retained. absURL drops it for root-relative URLs. */ -}}
+{{- $url := .URL -}}
+{{- with .Page -}}
+  {{- $url = .Permalink -}}
+{{- else -}}
+  {{- $parsed := urls.Parse $url -}}
+  {{- if and (not $parsed.IsAbs) (not $parsed.Host) (not (hasPrefix $url "#")) -}}
+    {{- $url = strings.TrimPrefix "/" $url | absURL -}}
+  {{- end -}}
+{{- end -}}
+{{- return $url -}}
