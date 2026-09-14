@@ -1,0 +1,135 @@
+media:
+  - name: images
+    label: Obrázky
+    input: static/images
+    output: /images
+    categories: [image]
+
+  - name: routes
+    label: Mapy a PDF tras
+    input: static/padesatka
+    output: /padesatka
+    extensions: [pdf]
+    rename: false
+
+content:
+  - name: padesatka
+    label: Tišnovská padesátka
+    type: collection
+    path: content/padesatka
+    format: toml-frontmatter
+    subfolders: false
+    exclude: [_index.md]
+    filename:
+      template: "{year}.md"
+      field: create
+    view:
+      primary: title
+      sort: [publishDate, title]
+      default:
+        sort: publishDate
+        order: desc
+    fields:
+      - name: title
+        label: Název
+        type: string
+        required: true
+
+      - name: publishDate
+        label: Datum zveřejnění
+        type: date
+        options:
+          format: yyyy-MM-dd
+
+      - name: draft
+        label: Koncept
+        type: boolean
+        default: false
+
+      - &markdown_body
+        name: body
+        label: Obsah (Markdown)
+        type: code
+        options:
+          format: markdown
+
+  - name: posts
+    label: Články
+    type: collection
+    path: content/posts
+    format: toml-frontmatter
+    subfolders: false
+    exclude: [_index.md]
+    filename:
+      template: "{primary}.md"
+      field: create
+    fields:
+      - name: title
+        label: Název
+        type: string
+        required: true
+
+      - name: publishDate
+        label: Datum zveřejnění
+        type: date
+        options:
+          format: yyyy-MM-dd
+
+      - name: tags
+        label: Štítek
+        type: string
+
+      - name: draft
+        label: Koncept
+        type: boolean
+        default: false
+
+      - *markdown_body
+
+  - name: about
+    label: O nás a kontakty
+    type: collection
+    path: content/about
+    format: toml-frontmatter
+    subfolders: false
+    exclude: [_index.md]
+    filename:
+      template: "{primary}.md"
+      field: create
+    fields:
+      - name: title
+        label: Název
+        type: string
+        required: true
+
+      - name: featured
+        label: Zvýrazněná stránka
+        type: boolean
+
+      - *markdown_body
+
+  - name: padesatka_index
+    label: Úvod — Tišnovská padesátka
+    type: file
+    path: content/padesatka/_index.md
+    format: toml-frontmatter
+    fields: &section_fields
+      - name: title
+        label: Název
+        type: string
+        required: true
+      - *markdown_body
+
+  - name: posts_index
+    label: Úvod — Články
+    type: file
+    path: content/posts/_index.md
+    format: toml-frontmatter
+    fields: *section_fields
+
+  - name: about_index
+    label: Úvod — O nás
+    type: file
+    path: content/about/_index.md
+    format: toml-frontmatter
+    fields: *section_fields
