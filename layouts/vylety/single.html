@@ -1,0 +1,9 @@
+{{ define "content" }}
+<div class="col-12"><article class="club-page">
+  {{ with site.GetPage "/vylety" }}<a href="{{ .RelPermalink }}">← Archiv výletů</a>{{ end }}
+  <h1>{{ .Title }}</h1>
+  {{ with .Params.eventDate }}<p class="trip-date"><time datetime="{{ (time.AsTime .).Format "2006-01-02" }}">{{ time.AsTime . | time.Format ":date_long" }}</time></p>{{ end }}
+  {{ .Content }}
+  {{ with .Params.albumUrl }}<a class="club-button" href="{{ . }}">Prohlédnout fotky na Rajčeti ↗</a>{{ end }}
+</article></div>
+{{ end }}

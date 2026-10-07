@@ -1,0 +1,18 @@
+{{ define "content" }}
+<div class="col-12">
+  <div class="section-intro"><p class="club-eyebrow">Ze života klubu</p><h1>{{ .Title }}</h1>{{ .Content }}</div>
+  {{ $trips := partial "functions/past-trips" . }}
+  {{ $year := "" }}
+  {{ range $trips }}
+    {{ $date := partial "functions/album-date" . }}
+    {{ $tripYear := $date.year | default "Bez data" }}
+    {{ if ne $tripYear $year }}
+      {{ if $year }}</ul></section>{{ end }}
+      {{ $year = $tripYear }}
+      <section class="trip-year" aria-labelledby="year-{{ $year | urlize }}"><h2 id="year-{{ $year | urlize }}">{{ $year }}</h2><ul class="album-list">
+    {{ end }}
+    <li><a href="{{ .Params.albumUrl | default .RelPermalink }}"><span>{{ .Title }}</span><span class="album-link-label">Rajče ↗</span></a></li>
+  {{ end }}
+  {{ if $year }}</ul></section>{{ end }}
+</div>
+{{ end }}

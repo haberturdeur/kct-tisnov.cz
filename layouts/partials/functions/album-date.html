@@ -1,0 +1,17 @@
+{{ $year := "" }}
+{{ $sort := "0000-00-00" }}
+{{ with .Params.eventDate }}
+  {{ $year = (time.AsTime .).Format "2006" }}
+  {{ $sort = (time.AsTime .).Format "2006-01-02" }}
+{{ else }}
+  {{ with .Params.albumYear }}
+    {{ $year = printf "%v" . }}
+    {{ $sort = printf "%s-01-01" $year }}
+  {{ else }}
+    {{ if not .PublishDate.IsZero }}
+      {{ $year = .PublishDate.Format "2006" }}
+      {{ $sort = .PublishDate.Format "2006-01-02" }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+{{ return (dict "year" $year "sort" $sort) }}

@@ -1,0 +1,15 @@
+<section class="club-sidebar-card" aria-labelledby="club-sidebar-title">
+  <p class="club-eyebrow">Náš klub</p>
+  <h2 id="club-sidebar-title">KČT Tišnov</h2>
+  <p>Turistika a společné výlety na Tišnovsku.</p>
+  {{ with site.GetPage "/about" }}<a class="club-sidebar-link" href="{{ .RelPermalink }}">O nás a kontakty <span aria-hidden="true">→</span></a>{{ end }}
+  {{ with site.Params.social.email }}<a class="club-sidebar-link" href="mailto:{{ . }}">{{ . }}</a>{{ end }}
+  {{ with site.Params.social.facebook }}<a class="club-sidebar-link" href="{{ . }}">Sledujte nás na Facebooku <span aria-hidden="true">↗</span></a>{{ end }}
+</section>
+<nav class="club-sidebar-card" aria-label="Na našem webu">
+  <h2>Na našem webu</h2>
+  {{ range site.Menus.main }}
+    <a class="club-sidebar-link" href="{{ partial "helpers/menu-url" . }}">{{ .Name }} <span aria-hidden="true">→</span></a>
+  {{ end }}
+</nav>
+{{ if ne "content" site.Params.tocPosition }}{{ partial "sidebar/toc" . }}{{ end }}

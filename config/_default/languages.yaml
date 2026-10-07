@@ -6,10 +6,16 @@ cs:
         main:
             - name: Tišnovská padesátka
               pageRef: /padesatka
-              weight: 1
-            - name: Příspěvky
-              pageRef: /posts
               weight: 2
-            - name: Kontakt
-              pageRef: /about
+            - name: Archiv výletů
+              pageRef: /vylety
               weight: 3
+            - name: Ze života klubu
+              pageRef: /posts
+              weight: 4
+            - name: O nás a členství
+              pageRef: /about
+              weight: 5
+            - name: Kontakt
+              pageRef: /about/kontakt
+              weight: 6

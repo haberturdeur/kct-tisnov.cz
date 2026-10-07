@@ -13,6 +13,9 @@ pagination:
 # paginatePath: page
 enableRobotsTXT: true
 enableEmoji: true
+cascade:
+  params:
+    sidebar: false
 pygmentsUseClasses: true
 
 blackfriday:

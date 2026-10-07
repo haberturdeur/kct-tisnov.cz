@@ -1,0 +1,18 @@
+{{ with hugo.Data.home_routes }}
+{{ $routes := . }}
+{{ with site.GetPage .event }}
+<section class="annual-event home-section" id="nejblizsi-akce" aria-labelledby="annual-event-title">
+  <div class="annual-event-intro">
+    {{ with .Params.eventDate }}
+    <div class="event-date"><span>{{ time.Format "Jan" . }}</span><strong>{{ time.Format "02" . }}</strong><span>{{ time.Format "2006" . }}</span></div>
+    {{ end }}
+    <div class="event-info">
+      <h2 id="annual-event-title">Tišnovská padesátka {{ $routes.year }}</h2>
+      <p>{{ .Params.cardSummary | default (.Plain | truncate 150) }}</p>
+      <a href="{{ .RelPermalink }}">Všechny informace k ročníku →</a>
+    </div>
+  </div>
+  {{ partial "featured-strip" (dict "integrated" true) }}
+</section>
+{{ end }}
+{{ end }}

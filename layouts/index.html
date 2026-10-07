@@ -1,0 +1,27 @@
+{{ define "content" }}
+<div class="col-12 home-sections">
+  {{ partial "annual-event" . }}
+  <section class="home-section" aria-labelledby="trips-title">
+    <div class="section-heading"><div><p class="club-eyebrow">Společně na cestách</p><h2 id="trips-title">Z našich výletů</h2></div>
+      {{ with site.GetPage "/vylety" }}<a href="{{ .RelPermalink }}">Archiv výletů →</a>{{ end }}
+    </div>
+    <p class="section-description">Kam jsme společně vyrazili? Prohlédněte si fotografie z našich výletů. Každá karta vás zavede přímo do alba na Rajčeti.</p>
+    {{ $trips := partial "functions/past-trips" . }}
+    {{ if $trips }}<div class="story-grid">{{ range first 4 $trips }}{{ partial "trip-card" . }}{{ end }}</div>{{ else }}
+      <a class="club-button" href="https://kcttisnov.rajce.idnes.cz/">Prohlédnout fotoalba na Rajčeti ↗</a>
+    {{ end }}
+  </section>
+  <section class="home-section" aria-labelledby="stories-title">
+    <div class="section-heading"><div><p class="club-eyebrow">Vzpomínky a příběhy</p><h2 id="stories-title">Ze života klubu</h2></div>
+      {{ with site.GetPage "/posts" }}<a href="{{ .RelPermalink }}">Všechny články →</a>{{ end }}
+    </div>
+    <div class="story-grid">
+      {{ range first 3 (where site.RegularPages "Section" "posts").ByPublishDate.Reverse }}{{ partial "story-card" . }}{{ end }}
+    </div>
+  </section>
+  <section class="join-panel" aria-labelledby="join-title">
+    <div><p class="club-eyebrow">Pojďte s námi</p><h2 id="join-title">První krok? Ozvěte se nám.</h2><p>Zajímáte se o členství nebo chcete pomoci s přípravou Padesátky? Napište nám a domluvíme se, jak se zapojit.</p></div>
+    {{ with site.GetPage "/about" }}<a class="club-button" href="{{ .RelPermalink }}">O nás a členství →</a>{{ end }}
+  </section>
+</div>
+{{ end }}

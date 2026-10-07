@@ -1,0 +1,16 @@
+{{ define "content" }}
+<div class="col-12">
+  <div class="section-intro"><h1>{{ .Title }}</h1><p>Pěší i cyklistické trasy, mapy a ohlédnutí za jednotlivými ročníky našeho pochodu.</p>{{ .Content }}</div>
+  {{ partial "event-highlight" . }}
+  <section class="home-section" aria-labelledby="archive-title">
+    <div class="section-heading"><div><p class="club-eyebrow">Archiv pochodu</p><h2 id="archive-title">Předchozí ročníky</h2></div></div>
+    <div class="edition-list">
+      {{ $selection := partial "functions/club-event" . }}
+      {{ range .RegularPages.ByPublishDate.Reverse }}{{ if not (in $selection.pages .) }}
+      <a class="edition-link" href="{{ .RelPermalink }}"><div><h3>{{ .Title }}</h3><p>{{ .Params.cardSummary | default "Archivní informace a podklady k tomuto ročníku." }}</p></div><span aria-hidden="true">→</span></a>
+      {{ end }}{{ end }}
+    </div>
+    {{ with site.GetPage "/posts/padesatka-2020" }}<p class="mt-4"><a href="{{ .RelPermalink }}">Jak se vydařil jubilejní 50. ročník v roce 2020 →</a></p>{{ end }}
+  </section>
+</div>
+{{ end }}

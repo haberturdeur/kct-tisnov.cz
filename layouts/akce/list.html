@@ -1,0 +1,4 @@
+{{ define "content" }}
+<div class="col-12"><div class="section-intro"><h1>{{ .Title }}</h1>{{ .Content }}</div>{{ partial "event-highlight" . }}
+{{ with site.GetPage "/padesatka" }}<p><a href="{{ .RelPermalink }}">Tišnovská padesátka a předchozí ročníky →</a></p>{{ end }}</div>
+{{ end }}

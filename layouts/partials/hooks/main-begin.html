@@ -1,0 +1,15 @@
+<div id="main-content" tabindex="-1"></div>
+{{ if .IsHome }}
+<section class="club-intro" aria-labelledby="club-intro-title">
+  <div class="container club-intro-inner">
+    <div>
+      <p class="club-eyebrow">Pěšky i na kole. Společně ven.</p>
+      <h1 id="club-intro-title">Za turistikou na Tišnovsku</h1>
+      <p>Vítejte u Klubu českých turistů v Tišnově.<br>Pořádáme Tišnovskou padesátku. Najdete tu mapy tras i příběhy našeho klubu.</p>
+    </div>
+    {{ with site.GetPage "/padesatka" }}
+    <a class="club-button" href="#nejblizsi-akce">Tišnovská padesátka <span aria-hidden="true">→</span></a>
+    {{ end }}
+  </div>
+</section>
+{{ end }}

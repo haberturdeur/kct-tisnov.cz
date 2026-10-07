@@ -1,0 +1,10 @@
+{{ $trips := slice }}
+{{ $dated := slice }}
+{{ range where site.RegularPages "Section" "vylety" }}
+  {{ $date := partial "functions/album-date" . }}
+  {{ if le $date.sort (now.Format "2006-01-02") }}
+    {{ $dated = $dated | append (dict "page" . "date" $date.sort) }}
+  {{ end }}
+{{ end }}
+{{ range sort $dated "date" "desc" }}{{ $trips = $trips | append .page }}{{ end }}
+{{ return $trips }}

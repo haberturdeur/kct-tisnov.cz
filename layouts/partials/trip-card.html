@@ -1,0 +1,9 @@
+<article class="story-card trip-card">
+  {{ with .Params.eventDate }}<time datetime="{{ (time.AsTime .).Format "2006-01-02" }}">{{ time.AsTime . | time.Format ":date_long" }}</time>{{ else }}{{ with .Params.albumYear }}<span class="trip-date">{{ . }}</span>{{ else }}{{ if not .PublishDate.IsZero }}<time datetime="{{ .PublishDate.Format "2006-01-02" }}">Zveřejněno {{ .PublishDate | time.Format ":date_long" }}</time>{{ end }}{{ end }}{{ end }}
+  {{ $url := .Params.albumUrl | default .RelPermalink }}
+  <h3><a href="{{ $url }}">{{ .Title }}</a></h3>
+  {{ with .Params.cardSummary }}<p>{{ . }}</p>{{ end }}
+  <div class="trip-links">
+    {{ with .Params.albumUrl }}<a href="{{ . }}" aria-label="Fotky na Rajčeti: {{ $.Title }}">Fotky na Rajčeti ↗</a>{{ end }}
+  </div>
+</article>

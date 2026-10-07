@@ -2,6 +2,7 @@
 title = "Z historie i současnosti turistiky v Tišnově"
 publishDate = 2024-09-22
 tags = "historie"
+cardSummary = "Od prvních turistických cest přes založení odboru v roce 1929 až po tradici společných výletů a Tišnovské padesátky."
 +++
 
 # Historie
@@ -65,7 +66,9 @@ Při svém založení měl jen 16 členů, ale postupně získával další záj
 Nejvýznamnější akcí tišnovských turistů je od roku 1971 dálkový a turistický pochod "Tišnovská padesátka" pořádaný tradičně na podzim.
 
 
-# Současnost
+# Činnost odboru v roce 2020
+
+Následující část zachycuje činnost a členskou základnu v roce 2020. Nejde o aktuální program akcí.
 
 KČT Tišnov je v rámci republikové organizace KČT začleněn do Jihomoravské oblasti.
 

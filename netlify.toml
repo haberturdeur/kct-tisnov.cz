@@ -18,7 +18,7 @@ HUGO_ENV = "production"
   [headers.values]
     Referrer-Policy = "strict-origin-when-cross-origin"
     X-Content-Type-Options = "nosniff"
-    X-Frame-Options = "deny"
+    X-Frame-Options = "SAMEORIGIN"
     X-XSS-Protection = "1; mode=block"
 
 [[redirects]]

@@ -1,0 +1,9 @@
+<footer class="club-footer">
+  <div class="container club-footer-inner">
+    <div><strong>KČT Tišnov</strong><br><span>Klub českých turistů · odbor Tišnov</span></div>
+    <nav aria-label="Odkazy v zápatí">
+      {{ with site.GetPage "/about/kontakt" }}<a href="{{ .RelPermalink }}">Kontakt</a>{{ end }}
+      <a href="https://kct.cz/">Klub českých turistů ↗</a>
+    </nav>
+  </div>
+</footer>

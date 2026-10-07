@@ -1,0 +1,6 @@
+{{ $events := sort (where (where site.RegularPages "Section" "padesatka") "Params.eventDate" "ne" nil) "Params.eventDate" "desc" }}
+{{ $upcoming := slice }}
+{{ range $events }}{{ if ge ((time.AsTime .Params.eventDate).Format "2006-01-02") (now.Format "2006-01-02") }}{{ $upcoming = $upcoming | append . }}{{ end }}{{ end }}
+{{ $selected := first 1 $events }}
+{{ if $upcoming }}{{ $selected = first 1 (sort $upcoming "Params.eventDate" "asc") }}{{ end }}
+{{ return (dict "pages" $selected "upcoming" (gt (len $upcoming) 0)) }}

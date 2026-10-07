@@ -20,6 +20,8 @@ logo: images/logo.png # Logo image. Default to images/logo.webp.
 brand: KČT Tišnov
 
 palette: blue # Default palette. Optional. You'll need to clear the browser cache after modifying this.
+palettes: []
+color: light
 # Available palettes. Default to ALL. Empty array means disable.
 # palettes:
 #  - blue
@@ -116,7 +118,7 @@ post:
   numberifyHeadingsSeparator: . # The separator between of number and headings.
   # tocStyleType: decimal # The TOC's CSS list-style-type property.
   # imageTitleAsCaption: true
-  # panel: false # Disable the post panel.
+  panel: false # No floating controls in the single-column club layout.
   # nav: false # Disable post navigations.
   # The page position after clicking the read more button, read more from content if true. Default to the beginning of page.
   # It supports only of the manual summaries spliting via <!--more-->.
@@ -254,6 +256,7 @@ pwa:
   # dateFormat: 02/01/2006, 15:04:05 PM
 
 topAppBar:
+  colorToggle: false
   # See https://hbs.razonyang.com/v1/en/docs/widgets/social-links/.
   # social:
     # github: razonyang/hugo-theme-bootstrap

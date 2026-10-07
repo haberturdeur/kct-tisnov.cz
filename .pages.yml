@@ -46,6 +46,17 @@ content:
         type: boolean
         default: false
 
+      - name: eventDate
+        label: Datum konání akce
+        type: date
+        options:
+          format: yyyy-MM-dd
+
+      - &card_summary
+        name: cardSummary
+        label: Krátké shrnutí pro přehled
+        type: string
+
       - &visual_body
         name: body
         label: Obsah
@@ -93,10 +104,58 @@ content:
         label: Štítek
         type: string
 
+      - *card_summary
+
       - name: draft
         label: Koncept
         type: boolean
         default: false
+
+      - *visual_body
+
+  - name: vylety
+    label: Archiv výletů
+    type: collection
+    path: content/vylety
+    format: toml-frontmatter
+    subfolders: false
+    exclude: [_index.md]
+    filename:
+      template: "{primary}.md"
+      field: create
+    fields:
+      - name: title
+        label: Název
+        type: string
+        required: true
+
+      - name: eventDate
+        label: Datum výletu (pokud je známé)
+        type: date
+        options:
+          format: yyyy-MM-dd
+
+      - name: publishDate
+        label: Datum zveřejnění alba
+        type: date
+        options:
+          format: yyyy-MM-dd
+
+      - name: albumYear
+        label: Rok alba (pokud není známé datum)
+        type: number
+
+      - name: albumUrl
+        label: Odkaz na fotoalbum (Rajče)
+        type: string
+        required: true
+
+      - *card_summary
+
+      - name: draft
+        label: Koncept
+        type: boolean
+        default: true
 
       - *visual_body
 
@@ -147,6 +206,68 @@ content:
     path: content/about/_index.md
     format: toml-frontmatter
     fields: *section_fields
+
+  - name: events_index
+    label: Úvod — Akce
+    type: file
+    path: content/akce/_index.md
+    format: toml-frontmatter
+    fields: *section_fields
+
+  - name: vylety_index
+    label: Úvod — Archiv výletů
+    type: file
+    path: content/vylety/_index.md
+    format: toml-frontmatter
+    fields: *section_fields
+
+  - name: home_routes
+    label: Úvodní stránka — přehled tras
+    type: file
+    path: data/home_routes.yaml
+    format: yaml
+    fields:
+      - name: event
+        label: Stránka ročníku (např. /padesatka/2026)
+        type: string
+        required: true
+      - name: year
+        label: Rok ročníku
+        type: number
+        required: true
+      - name: routes
+        label: Karty tras v pořadí zobrazení
+        type: object
+        list: true
+        fields:
+          - name: title
+            label: Název karty
+            type: string
+            required: true
+          - name: code
+            label: Označení trasy (např. T10)
+            type: string
+            required: true
+          - name: kind
+            label: Způsob výletu (Pěšky, Na kole, S kočárkem)
+            type: string
+            required: true
+          - name: distance
+            label: Délka v kilometrech
+            type: number
+            required: true
+          - name: pdf
+            label: Cesta k PDF (např. /padesatka/2026/T10.pdf)
+            type: string
+            required: true
+          - name: anchor
+            label: "Kotva nadpisu v článku bez # (např. t10)"
+            type: string
+            required: true
+          - name: description
+            label: Stručný popis
+            type: string
+            required: true
 
 settings:
   preview: true

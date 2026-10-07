@@ -1,0 +1,5 @@
+{{ define "content" }}
+<div class="col-12"><div class="section-intro"><p class="club-eyebrow">Vzpomínky a příběhy</p><h1>Ze života klubu</h1>{{ .Content }}</div>
+<div class="story-grid">{{ range .Paginator.Pages }}{{ partial "story-card" . }}{{ end }}</div>
+{{ partial "pagination" . }}</div>
+{{ end }}

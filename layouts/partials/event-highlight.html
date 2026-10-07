@@ -1,0 +1,13 @@
+{{ $selection := partial "functions/club-event" . }}
+{{ $upcoming := $selection.upcoming }}
+{{ range $selection.pages }}
+<section class="event-highlight home-section" id="nejblizsi-akce" aria-labelledby="next-event-title">
+  <div class="event-date"><span>{{ time.Format "Jan" .Params.eventDate }}</span><strong>{{ time.Format "02" .Params.eventDate }}</strong><span>{{ time.Format "2006" .Params.eventDate }}</span></div>
+  <div class="event-info">
+    <p class="club-eyebrow">{{ if $upcoming }}Nejbližší akce{{ else }}Poslední zveřejněný ročník · archiv{{ end }}</p>
+    <h2 id="next-event-title">{{ .Title }}</h2>
+    <p>{{ .Params.cardSummary | default (.Plain | truncate 150) }}</p>
+    <a class="club-button" href="{{ .RelPermalink }}">{{ if $upcoming }}Informace a trasy{{ else }}Prohlédnout ročník{{ end }} →</a>
+  </div>
+</section>
+{{ end }}

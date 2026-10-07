@@ -38,6 +38,12 @@ jobs:
           hugo-version: 'latest'
           extended: true
 
+      - name: Install PDF renderer
+        run: sudo apt-get update && sudo apt-get install --yes poppler-utils
+
+      - name: Render route previews
+        run: python3 scripts/render-route-previews.py
+
       - name: Build
         run: hugo --minify --gc --enableGitInfo
         

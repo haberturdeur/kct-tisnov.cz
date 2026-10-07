@@ -1,4 +1,9 @@
 // OVERRIDE THE BOOTSTRAP AND THEME SCSS VARIABLES.
 // See also https://hbs.razonyang.com/v1/en/docs/advanced/scss-variables/.
 
-// $logo-animation: false;
+$logo-animation: false;
+$palette-blue: #0078a2;
+$primary: #0078a2;
+$font-family-sans-serif: 'Nunito', system-ui, sans-serif;
+$body-bg: #f5f7f8;
+$border-radius: 0.25rem;

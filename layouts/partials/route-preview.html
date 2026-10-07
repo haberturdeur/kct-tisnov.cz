@@ -1,0 +1,20 @@
+  {{ partial "route-icons" . }}
+  {{ $previews := dict }}
+  {{ range $pdf, $images := hugo.Data.route_previews }}
+    {{ $urls := slice }}
+    {{ range $images }}{{ $urls = $urls | append (strings.TrimPrefix "/" . | relURL) }}{{ end }}
+    {{ $previews = merge $previews (dict (strings.TrimPrefix "/" $pdf | relURL) $urls) }}
+  {{ end }}
+  <script type="application/json" id="route-preview-data">{{ $previews | jsonify | safeJS }}</script>
+  <dialog class="route-preview" aria-labelledby="route-preview-title">
+    <div class="route-preview-header">
+      <h2 id="route-preview-title">Mapa trasy</h2>
+      <form method="dialog"><button type="submit" class="route-preview-close" aria-label="Zavřít náhled">×</button></form>
+    </div>
+    <div class="route-preview-actions">
+      <a class="route-preview-open" target="_blank" rel="noopener">Otevřít PDF ↗</a>
+      <a class="route-preview-download" download>Stáhnout PDF ↓</a>
+      <a class="route-preview-details">Podrobnosti trasy →</a>
+    </div>
+    <div class="route-preview-document"></div>
+  </dialog>

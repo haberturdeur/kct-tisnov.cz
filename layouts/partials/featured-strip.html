@@ -1,0 +1,23 @@
+{{ with hugo.Data.home_routes }}
+{{ $event := site.GetPage .event }}
+<section class="featured-strip" aria-labelledby="featured-title">
+  <div class="featured-heading">
+    <h3 id="featured-title">Trasy a mapy</h3>
+  </div>
+  <p class="section-description">Klikněte na trasu a prohlédněte si její mapu. PDF si můžete také stáhnout.</p>
+  <div class="route-grid">
+    {{ range .routes }}
+    {{ $kind := "walk" }}
+    {{ if hasPrefix .code "CT" }}{{ $kind = "cycle" }}{{ else if strings.Contains (lower .kind) "kočár" }}{{ $kind = "stroller" }}{{ end }}
+    <a class="featured-card route-choice" href="{{ strings.TrimPrefix "/" .pdf | relURL }}" data-route-title="{{ .code }} — {{ .title }}" data-route-details="{{ $event.RelPermalink }}#{{ .anchor }}" target="_blank" rel="noopener">
+      <span class="route-method-icon" title="{{ .kind }}" aria-hidden="true"><svg focusable="false"><use href="#route-icon-{{ $kind }}"></use></svg></span>
+      <span class="club-eyebrow">{{ .kind }} · {{ .code }}</span>
+      <span class="route-distance">{{ .distance }} <small>km</small></span>
+      <h3>{{ .title }}</h3><p>{{ .description }}</p>
+      <span class="featured-card-bottom"><span>Prohlédnout mapu</span><span aria-hidden="true">↗</span></span>
+    </a>
+    {{ end }}
+  </div>
+  {{ partial "route-preview" . }}
+</section>
+{{ end }}

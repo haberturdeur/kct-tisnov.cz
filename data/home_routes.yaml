@@ -1,0 +1,73 @@
+event: /padesatka/2026
+year: 2026
+routes:
+  - title: Na Vokounovu vyhlídku
+    code: T7
+    pdf: /padesatka/2026/T7.pdf
+    kind: Pěšky
+    distance: 7
+    anchor: t7-pěší
+    description: Přes Besének, Předklášteří a Klínek na Vokounovu vyhlídku.
+  - title: S kočárkem kolem Předklášteří
+    code: T7 · varianta pro kočárky
+    pdf: /padesatka/2026/T7kocarky.pdf
+    kind: S kočárkem
+    distance: 7
+    anchor: t7-pro-kočárky
+    description: Přes Besének a Předklášteří, pod Vokounovou vyhlídkou a zpátky do Tišnova.
+  - title: K Prosbě lesa
+    code: T10
+    pdf: /padesatka/2026/T10.pdf
+    kind: Pěšky
+    distance: 10
+    anchor: t10
+    description: Z Tišnova přes Besének a Předklášteří. Návrat přes Za Mlýnem.
+  - title: Přes Nelepeč a Pejškov
+    code: T17
+    pdf: /padesatka/2026/T17.pdf
+    kind: Pěšky
+    distance: 17
+    anchor: t17
+    description: Přes Předklášteří, Nelepeč a Čížky. Zpět přes Pejškov a Vohančice.
+  - title: Přes Loučky a Vohančice
+    code: T24
+    pdf: /padesatka/2026/T24.pdf
+    kind: Pěšky
+    distance: 24
+    anchor: t24
+    description: Delší okruh přes Dolní Loučky, Chytálky, Pejškov a Vohančice.
+  - title: K Deblínskému rybníku
+    code: T29
+    pdf: /padesatka/2026/T29.pdf
+    kind: Pěšky
+    distance: 29
+    anchor: t29
+    description: Přes Dolní Loučky a Chytálky do Deblína. Zpět přes Pejškov a Vohančice.
+  - title: Přes Kutiny k Níhovu
+    code: T41
+    pdf: /padesatka/2026/T41.pdf
+    kind: Pěšky
+    distance: 41
+    anchor: t41
+    description: Přes Řikonín, Kutiny a Rojetín k Níhovskému rybníku. Návrat přes Deblín.
+  - title: Přes Křoví a Svatoslav
+    code: T50
+    pdf: /padesatka/2026/T50.pdf
+    kind: Pěšky
+    distance: 50
+    anchor: t50
+    description: Přes Kutiny a Níhovský rybník do Křoví. Zpět kolem mlýnů přes Svatoslav a Deblín.
+  - title: Na kole přes Deblín
+    code: CT33
+    pdf: /padesatka/2026/CT33.pdf
+    kind: Na kole
+    distance: 33
+    anchor: ct33
+    description: Přes Dolní Loučky a Deblín, s návratem přes Heroltice a Březinu.
+  - title: Na kole přes Křoví
+    code: CT51
+    pdf: /padesatka/2026/CT51.pdf
+    kind: Na kole
+    distance: 51
+    anchor: ct51
+    description: Přes Řikonín, Níhov a Křoví. Návrat přes Svatoslav, Deblín a Heroltice.

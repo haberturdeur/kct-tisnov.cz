@@ -1,0 +1,6 @@
+<article class="story-card">
+  <time datetime="{{ .PublishDate.Format "2006-01-02" }}">{{ .PublishDate | time.Format ":date_long" }}</time>
+  <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+  <p>{{ .Params.cardSummary | default (.Plain | truncate 160) }}</p>
+  <a class="story-more" href="{{ .RelPermalink }}" aria-label="Číst: {{ .Title }}">Přečíst příběh →</a>
+</article>
