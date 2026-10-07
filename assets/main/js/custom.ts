@@ -61,6 +61,7 @@ if (routeArticle) {
       const image = document.createElement("img");
       image.src = images[0];
       image.alt = `Mapa trasy ${heading.textContent?.trim()}`;
+      image.setAttribute("data-viewer-invisible", "");
       image.loading = "lazy";
       image.decoding = "async";
       const caption = document.createElement("span");
@@ -79,6 +80,9 @@ if (preview && typeof preview.showModal === "function") {
   const open = preview.querySelector<HTMLAnchorElement>(".route-preview-open")!;
   const download = preview.querySelector<HTMLAnchorElement>(".route-preview-download")!;
   const details = preview.querySelector<HTMLAnchorElement>(".route-preview-details")!;
+  // Viewer.js also delegates clicks from <main>; keep map-image clicks inside
+  // this dialog instead of letting them reach that second lightbox handler.
+  documentSlot.addEventListener("click", (event) => event.stopPropagation());
 
   document.querySelectorAll<HTMLAnchorElement>(".route-choice").forEach((card) => {
     card.addEventListener("click", (event) => {
@@ -95,6 +99,9 @@ if (preview && typeof preview.showModal === "function") {
         const image = document.createElement("img");
         image.src = src;
         image.alt = `${title.textContent} — strana ${index + 1}`;
+        // The map already has its own native dialog; do not open the theme's
+        // document-level image gallery beneath that dialog on another click.
+        image.setAttribute("data-viewer-invisible", "");
         image.loading = index === 0 ? "eager" : "lazy";
         image.decoding = "async";
         return image;
