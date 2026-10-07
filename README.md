@@ -1,139 +1,97 @@
-# Hugo Theme Bootstrap Skeleton
+# KČT Tišnov
 
-The starter template for [Hugo Bootstrap Theme](https://github.com/razonyang/hugo-theme-bootstrap) that install the theme as a Hugo module.
+Zdrojové soubory webu **[kct-tisnov.cz](https://kct-tisnov.cz/)** — Tišnovská
+padesátka, archiv společných výletů, fotografie na Rajčeti a informace o klubu.
+Web generuje Hugo s upravenou šablonou Hugo Bootstrap Theme.
 
-## Demo
+## Úpravy obsahu
 
-| Platform | URL |
-|---|---|
-| Netlify | https://hbs-skeleton.netlify.app/ |
-| GitHub Pages | https://projects.razonyang.com/hugo-theme-bootstrap-skeleton/ |
-| Cloudflare Pages | https://hbs-skeleton.pages.dev/ |
-| Docker image | See also [Dockerfile](Dockerfile) |
+Obsah upravujte v **[Pages CMS](https://admin.kct-tisnov.cz/)**. Podrobný návod
+najdete v [EDITING.md](EDITING.md): přidávání ročníků, map a PDF, úpravy tras,
+tabulky účasti a odkazy na fotoalba.
 
-## Usage
+Uložení změn do větve `main` spustí sestavení a nasazení webu. Fotografie
+zůstávají na Rajčeti; záznamy v archivu na jednotlivá alba přímo odkazují.
+Nová alba je potřeba přidat v CMS — archiv se s Rajčetem automaticky nesynchronizuje.
 
-Please make sure you have install the [build tools](https://hbs.razonyang.com/v1/en/docs/getting-started/prerequisites/#build-tools) prior to using this template if you're not using Docker to preview site.
+## Místní náhled
 
-**1. Clone this repository**
+Potřebné nástroje:
 
-It's recommending cloning the repo by clicking the `Use this template` button, if you're hosting your code on GitHub.
+- **Hugo Extended** — současná konfigurace byla ověřena s verzí `0.167.0`.
+- **Node.js 24** a npm, stejně jako v nasazovacím workflow.
+- **Go** pro načtení šablony přes Hugo Modules.
+- **Python 3** a **Poppler** (`pdftoppm`) pro obrázkové náhledy PDF.
 
-You can also clone it manually.
+Na Ubuntu/Debianu nainstalujete Poppler příkazem `sudo apt install poppler-utils`.
 
-```shell
-$ git clone https://github.com/razonyang/hugo-theme-bootstrap-skeleton.git blog
-$ cd blog
-$ rm -rf .git
-$ git init -b main
+```sh
+git clone https://github.com/haberturdeur/kct-tisnov.cz.git
+cd kct-tisnov.cz
+npm ci
+python3 scripts/render-route-previews.py
+hugo server --bind 127.0.0.1 --disableFastRender
 ```
 
-> The `rm -rf .git` is a dangerous action, please make sure that you enter the right folder.
+Náhled běží na **http://127.0.0.1:1313/**. Pro jiný port přidejte například
+`--port 1315`. Koncepty zobrazíte přidáním `--buildDrafts`.
 
-**2. Modify the `go.mod`**
+Po změně závislostí spusťte znovu `npm ci`. Po přidání nebo výměně PDF spusťte
+znovu `python3 scripts/render-route-previews.py`; samotný Hugo server PDF
+na obrázky nepřevádí.
 
-Replace the following line to yours, such as `module github.com/user/repo`.
+## Mapy a PDF
+
+PDF ukládejte do `static/padesatka/<rok>/`, například:
 
 ```text
-module github.com/razonyang/hugo-theme-bootstrap-skeleton
+static/padesatka/2026/T10.pdf
 ```
 
-**3. Commit and push changes to your repository**
+Odkaz na webu je `/padesatka/2026/T10.pdf` — bez části `static`.
+Skript `scripts/render-route-previews.py` převede všechny strany PDF na JPEG
+v podsložkách `previews/` a vytvoří seznam `data/route_previews.json`.
+Tyto generované soubory neupravujte ručně.
 
-```shell
-$ git add -A
-$ git commit -m 'First commit'
-$ git remote set-url origin github.com/user/repo
-$ git push origin main
-```
+Karty tras zobrazují mapy jako obrázky s možností zvětšení. Původní PDF
+zůstávají dostupná ke stažení; náhled nepoužívá vloženou PDF čtečku.
 
-## Go Proxy(Optional)
-
-If you're located at China mainland without VPN, the Hugo module download may fail.
-
-There are two proxies for this: [GOPROXY.CN](https://goproxy.cn) and [GOPROXY.IO](https://goproxy.io).
-
-```bash
-$ export HUGO_MODULE_PROXY=https://goproxy.cn
-```
-
-> Please note that, Hugo doesn't respect the `GOPROXY` env var, please use `HUGO_MODULE_PROXY` instead.
-
-You can also set the `module.proxy` instead of using env var.
-
-```yaml
-module:
-  proxy: https://goproxy.cn
-```
-
-## Local Development
-
-### Develop via Docker Compose
-
-**1.Install Dependencies**
+## Produkční sestavení a nasazení
 
 ```sh
-$ docker compose run server npm ci
+npm ci
+python3 scripts/render-route-previews.py
+hugo --minify --gc --enableGitInfo
 ```
 
-> This step is one-time task per machine, unless you deleted the __node_modules__ folder or introduce new dependencies.
+Výstup vznikne v `public/`. Generovaný adresář necommitujte.
 
-**2. Start server**
+Nasazení zajišťuje [GitHub Actions](.github/workflows/gh-pages.yml) při každém
+pushi do `main`. Workflow nainstaluje Node.js 24, aktuální Hugo Extended a
+Poppler, vygeneruje náhledy map, sestaví web, přidá `CNAME` a publikuje výstup
+na GitHub Pages. Průběh a případné chyby najdete na
+[kartě Actions](https://github.com/haberturdeur/kct-tisnov.cz/actions).
 
-```sh
-$ docker compose up
-```
+Konfigurace Netlify a Dockeru pocházejí z původní startovací šablony;
+popsaný a používaný postup nasazení je GitHub Pages.
 
-### Develop with Native Tools
+## Kde co najít
 
-**1. Install dependencies**
+| Umístění | Obsah |
+| --- | --- |
+| `content/padesatka/` | Stránky jednotlivých ročníků, trasy a účast |
+| `content/vylety/` | Odkazy na fotoalba z výletů a akcí |
+| `content/posts/` | Články, historie a ohlédnutí |
+| `content/about/` | Informace o klubu, členství a kontakty |
+| `data/home_routes.yaml` | Ročník a karty tras na úvodní stránce |
+| `static/padesatka/` | PDF mapy a generované obrázkové náhledy |
+| `static/images/` | Obrázky webu |
+| `layouts/` | Vlastní šablony a komponenty stránek |
+| `assets/main/scss/` | Vzhled webu |
+| `assets/main/js/custom.ts` | Mřížka tras a obrázkové náhledy map |
+| `config/_default/` | Nastavení Huga, navigace a šablony |
+| `.pages.yml` | Kolekce a pole editoru Pages CMS |
 
-```shell
-$ npm ci
-```
-
-Generally, this step only needs to be performed once for each local project.
-
-**2. Start server**
-
-```shell
-$ hugo server
-```
-
-## Upgrade theme
-
-```shell
-$ hugo mod get github.com/razonyang/hugo-theme-bootstrap@master
-$ hugo mod npm pack
-$ npm update
-$ git add go.mod go.sum package.json package-lock.json
-$ git commit -m 'Update the theme'
-```
-
-You can also replace the `master` with stable [releases](https://github.com/razonyang/hugo-theme-bootstrap/releases).
-
-## Deployment
-
-> The `baseURL` is very important, the CSS, JS and Sitemap require it to be set.
-
-**Please make sure you've change the `baseURL` on `config/_default/config.yaml` before deploying your site.**
-
-**Please also remove the `-b {url}` from the following files if you're using this template.**
-
-- `.github/workflows/gh-pages.yml`
-
-This template supports GitHub Pages, Docker image, Netlify out-of-box. See also [Deployment](https://hbs.razonyang.com/v1/en/docs/deployment/) for getting more detail.
-
-The following parameters also need to be tweaked.
-
-- Replace the `utterances.*` or `giscus.*` with your own to get notified when someone comments.
-- Modify the `repo` to your own, or delete it if it's unused.
-- `contact.endpoint`.
-
-There are some hooks under the `layouts/partials/hooks` folder for showing how to use them, please feel free to delete them.
-
-## Documentations
-
-- [English](https://hbs.razonyang.com/v1/en/)
-- [简体中文](https://hbs.razonyang.com/v1/zh-hans/)
-- [繁體中文](https://hbs.razonyang.com/v1/zh-hant/)
+Stránky ročníků mají jednotný název, například **Tišnovská padesátka 2026 —
+56. ročník**. Při přechodu na nový ročník aktualizujte také
+`data/home_routes.yaml`; podrobnosti jsou v [návodu pro editory](EDITING.md).
