@@ -18,6 +18,7 @@ Všechny budou směrovány na jihozápad od města s východištěm na Předklá
 					<th style="text-align: center">T7 pro kočárky</th>
 					<th style="text-align: center">CT51</th>
 					<th style="text-align: center">CT33</th>
+					<th style="text-align: center">Celkem</th>
 			</tr>
 	</thead>
 	<tbody>
@@ -32,6 +33,7 @@ Všechny budou směrovány na jihozápad od města s východištěm na Předklá
 					<td style="text-align: center">90</td>
 					<td style="text-align: center">39</td>
 					<td style="text-align: center">27</td>
+					<td style="text-align: center">1236</td>
 			</tr>
 	</tbody>
 </table>
